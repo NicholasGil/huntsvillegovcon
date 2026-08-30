@@ -12,6 +12,8 @@ export const hero = {
   guarantee: "60-day money-back guarantee",
   credibility:
     "Every contact, requirement, and deadline in this guide links to the official page it came from. No rankings, no secrets, no system.",
+  description:
+    "A sourced, dated map of who buys what at Redstone Arsenal, who to contact, and what you have to comply with right now.",
 } as const;
 
 export const pricingTiers = [

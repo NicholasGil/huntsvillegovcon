@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 
 export default async function CheckoutSuccessPage({
   searchParams,
-}: PageProps<"/checkout/success">) {
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const query = await searchParams;
   const sessionId =
     typeof query.session_id === "string" ? query.session_id : null;

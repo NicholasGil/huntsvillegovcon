@@ -16,9 +16,13 @@ export function generateStaticParams() {
   return GUIDE_MODULES.map((entry) => ({ module: entry.slug }));
 }
 
+type ModulePageProps = {
+  params: Promise<{ module: string }>;
+};
+
 export async function generateMetadata({
   params,
-}: PageProps<"/guide/[module]">): Promise<Metadata> {
+}: ModulePageProps): Promise<Metadata> {
   const { module: moduleSlug } = await params;
   const guideModule = getGuideModule(moduleSlug);
   return { title: guideModule ? guideModule.title : "Map module" };
@@ -26,7 +30,7 @@ export async function generateMetadata({
 
 export default async function GuideModulePage({
   params,
-}: PageProps<"/guide/[module]">) {
+}: ModulePageProps) {
   const { module: moduleSlug } = await params;
   const guideModule = getGuideModule(moduleSlug);
   if (!guideModule) {

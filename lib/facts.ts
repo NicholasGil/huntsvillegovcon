@@ -1,9 +1,4 @@
-import type {
-  ChangeRow,
-  CorrectionRow,
-  EntitlementRow,
-  FactRow,
-} from "@/lib/database";
+import type { CorrectionRow, EntitlementRow, FactRow } from "@/lib/database";
 import { isAdminUser } from "@/lib/entitlement";
 import { seedChanges, seedFactsMatching, type SeedChange, type SeedFact } from "@/lib/seed-facts";
 import { createSupabaseServerClient } from "@/lib/supabase/server";

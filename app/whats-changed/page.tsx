@@ -22,7 +22,7 @@ export default function WhatsChangedPage() {
       </p>
       <ol className="mt-10 max-w-xl space-y-8">
         {changes.map((entry) => (
-          <li key={entry.id ?? `${entry.headline}:${entry.effective_date}`}>
+          <li key={`${entry.headline}:${entry.effective_date}`}>
             <h2 className="font-serif text-2xl text-ink">{entry.headline}</h2>
             {entry.effective_date ? (
               <p className="mt-2 text-sm text-muted">
