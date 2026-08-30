@@ -46,9 +46,7 @@ export async function POST(request: Request) {
     after(async () => {
       try {
         await sendPurchaseMagicLink(result.email);
-      } catch {
-        // Entitlement is already written.
-      }
+      } catch {}
     });
   }
 

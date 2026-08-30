@@ -97,8 +97,6 @@ export function isHttpUrl(value: string): boolean {
 
 const AS_OF = "2026-08-30";
 
-// Mirrors supabase/migrations/20260830120100_seed_sourced_facts.sql.
-// Static pages read this catalog so they never call cookies() or the gated facts table.
 export const seedFacts: readonly SeedFact[] = [
   {
     entity_type: "regulation",

@@ -8,10 +8,6 @@ export type Entitlement =
       kind: "signed-in";
     } & EntitlementFlags);
 
-/**
- * auth.uid() → email → entitlement rows → tier flags.
- * toolkit and updates include every lower tier. updates expire after 12 months.
- */
 export async function getEntitlement(): Promise<Entitlement> {
   await cookies();
 
