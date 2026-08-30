@@ -74,6 +74,11 @@ export const FACT_FIELD_LABELS: Record<string, string> = {
   social_disadvantage_rule: "Social-disadvantage rule",
   certification_portal: "Certification portal",
   fy2024_contracts: "FY2024 contracts",
+  dates: "Dates",
+  referral_code: "Referral code",
+  cost: "Cost",
+  revision: "Revision",
+  portal_urls: "Portal URLs",
 };
 
 export function fieldLabel(field: string): string {
@@ -129,6 +134,29 @@ export const seedFacts: readonly SeedFact[] = [
     value:
       "None of the major socioeconomic set-asides are self-certified. Applications run through certifications.sba.gov, not certify.sba.gov.",
     source_url: "https://certifications.sba.gov",
+    verified_at: AS_OF,
+    verification_method: "official_page",
+    watch_priority: "high",
+  },
+  {
+    entity_type: "regulation",
+    entity_slug: "nist-800-171",
+    field: "revision",
+    value:
+      "⟦VERIFY: NIST SP 800-171 Rev 3 transition timing. CMMC L2 still maps to Rev 2 in the cited DoD CIO material.⟧",
+    source_url: "https://dodcio.defense.gov/CMMC/",
+    verified_at: AS_OF,
+    verification_method: "official_page",
+    watch_priority: "high",
+  },
+  {
+    entity_type: "resource",
+    entity_slug: "dod-portals",
+    field: "portal_urls",
+    value:
+      "DoD is officially the Department of War. Sites and portal URLs are mid-transition across dodcio.defense.gov, war.gov, and business.defense.gov.",
+    source_url:
+      "https://www.whitehouse.gov/presidential-actions/2025/09/restoring-the-united-states-department-of-war/",
     verified_at: AS_OF,
     verification_method: "official_page",
     watch_priority: "high",
@@ -454,7 +482,19 @@ export const seedFacts: readonly SeedFact[] = [
     entity_slug: "apbi",
     field: "name",
     value: "AMCOM / Team Redstone APBI",
-    source_url: "⟦VERIFY: current APBI dates via AMCOM news releases⟧",
+    source_url:
+      "https://www.amcom.army.mil/News/News-Releases/Article/3275579/team-redstones-advance-planning-briefings-to-industry-slated-for-march-21-23/",
+    verified_at: AS_OF,
+    verification_method: "official_page",
+    watch_priority: "normal",
+  },
+  {
+    entity_type: "event",
+    entity_slug: "apbi",
+    field: "dates",
+    value:
+      "Historically March. ⟦VERIFY: current dates via AMCOM news releases⟧",
+    source_url: "https://www.amcom.army.mil/News/News-Releases/",
     verified_at: AS_OF,
     verification_method: "secondary",
     watch_priority: "normal",
@@ -464,9 +504,29 @@ export const seedFacts: readonly SeedFact[] = [
     entity_slug: "ndia-tennessee-valley",
     field: "name",
     value: "NDIA Tennessee Valley Chapter",
-    source_url: "https://ndiatennesseevalley.org",
+    source_url: "https://www.ndiatennvalley.org/",
     verified_at: AS_OF,
     verification_method: "official_page",
+    watch_priority: "normal",
+  },
+  {
+    entity_type: "event",
+    entity_slug: "ndia-tennessee-valley",
+    field: "referral_code",
+    value: "NDITVC",
+    source_url: "https://www.ndiatennvalley.org/",
+    verified_at: AS_OF,
+    verification_method: "official_page",
+    watch_priority: "normal",
+  },
+  {
+    entity_type: "event",
+    entity_slug: "ndia-tennessee-valley",
+    field: "dates",
+    value: "Year-round. ⟦VERIFY: current chapter dates⟧",
+    source_url: "https://www.ndiatennvalley.org/",
+    verified_at: AS_OF,
+    verification_method: "secondary",
     watch_priority: "normal",
   },
   {
@@ -497,6 +557,17 @@ export const seedFacts: readonly SeedFact[] = [
     source_url: "https://hsvchamber.org/team-redstone",
     verified_at: AS_OF,
     verification_method: "official_page",
+    watch_priority: "normal",
+  },
+  {
+    entity_type: "event",
+    entity_slug: "hsv-chamber",
+    field: "cost",
+    value:
+      "⟦VERIFY: Chamber programs are often membership- or fee-based. Do not describe them as free without checking.⟧",
+    source_url: "https://hsvchamber.org/team-redstone",
+    verified_at: AS_OF,
+    verification_method: "secondary",
     watch_priority: "normal",
   },
 ];

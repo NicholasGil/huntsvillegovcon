@@ -3,6 +3,8 @@ insert into public.facts (entity_type, entity_slug, field, value, source_url, ve
   ('regulation', 'cmmc', 'phase_ii_status', 'Phase II suspended July 13, 2026. New procurements currently cannot designate a Level 2 or Level 3 assessment requirement, and waiver procedures are halted pending a 60-day CIO review. Level 1 self-assessment and DFARS 252.204-7012/7019/7020 remain in force.', 'https://dodcio.defense.gov/Portals/0/Documents/Library/ImplementingSuspensionCMMC-PhaseII.pdf', '2026-08-30', 'official_page', 'high'),
   ('regulation', '8a', 'social_disadvantage_rule', '⟦VERIFY: high-priority Regulatory Watch. Proposed rule June 11, 2026; final rule August 11, 2026; effective September 10, 2026. Confirm the rule took effect as scheduled and check for litigation before publishing anything in the past tense.⟧', 'https://www.sba.gov/article/2026/06/11/sba-reforms-8a-business-development-program-end-racial-discrimination-federal-contracting', '2026-08-30', 'official_page', 'high'),
   ('program', 'set-asides', 'self_certification', 'None of the major socioeconomic set-asides are self-certified. Applications run through certifications.sba.gov, not certify.sba.gov.', 'https://certifications.sba.gov', '2026-08-30', 'official_page', 'high'),
+  ('regulation', 'nist-800-171', 'revision', '⟦VERIFY: NIST SP 800-171 Rev 3 transition timing. CMMC L2 still maps to Rev 2 in the cited DoD CIO material.⟧', 'https://dodcio.defense.gov/CMMC/', '2026-08-30', 'official_page', 'high'),
+  ('resource', 'dod-portals', 'portal_urls', 'DoD is officially the Department of War. Sites and portal URLs are mid-transition across dodcio.defense.gov, war.gov, and business.defense.gov.', 'https://www.whitehouse.gov/presidential-actions/2025/09/restoring-the-united-states-department-of-war/', '2026-08-30', 'official_page', 'high'),
   ('program', 'sam-gov', 'registration_cost', 'Registration in SAM.gov is always free. The government will never ask you to pay to register, update, or renew.', 'https://sam.gov/entity-registration', '2026-08-30', 'official_page', 'normal'),
   ('resource', 'apex-alabama', 'name', 'APEX Accelerator of Alabama', 'https://apexal.org', '2026-08-30', 'official_page', 'normal'),
   ('resource', 'apex-alabama', 'address', 'Business Administration Building, 800 Ben Graves Drive NW, Suite 126, Huntsville, AL 35816', 'https://apexal.org', '2026-08-30', 'official_page', 'normal'),
@@ -34,11 +36,15 @@ insert into public.facts (entity_type, entity_slug, field, value, source_url, ve
   ('prime', 'rtx', 'name', 'RTX', '⟦VERIFY: RTX small business URL⟧', '2026-08-30', 'secondary', 'normal'),
   ('prime', 'l3harris-aerojet', 'name', 'L3Harris / Aerojet Rocketdyne', '⟦VERIFY: L3Harris SBLO page URL⟧', '2026-08-30', 'secondary', 'normal'),
   ('prime', 'sierra-space', 'name', 'Sierra Space', '⟦VERIFY: Sierra Space suppliers URL⟧', '2026-08-30', 'secondary', 'normal'),
-  ('event', 'apbi', 'name', 'AMCOM / Team Redstone APBI', '⟦VERIFY: current APBI dates via AMCOM news releases⟧', '2026-08-30', 'secondary', 'normal'),
-  ('event', 'ndia-tennessee-valley', 'name', 'NDIA Tennessee Valley Chapter', 'https://ndiatennesseevalley.org', '2026-08-30', 'official_page', 'normal'),
+  ('event', 'apbi', 'name', 'AMCOM / Team Redstone APBI', 'https://www.amcom.army.mil/News/News-Releases/Article/3275579/team-redstones-advance-planning-briefings-to-industry-slated-for-march-21-23/', '2026-08-30', 'official_page', 'normal'),
+  ('event', 'apbi', 'dates', 'Historically March. ⟦VERIFY: current dates via AMCOM news releases⟧', 'https://www.amcom.army.mil/News/News-Releases/', '2026-08-30', 'secondary', 'normal'),
+  ('event', 'ndia-tennessee-valley', 'name', 'NDIA Tennessee Valley Chapter', 'https://www.ndiatennvalley.org/', '2026-08-30', 'official_page', 'normal'),
+  ('event', 'ndia-tennessee-valley', 'referral_code', 'NDITVC', 'https://www.ndiatennvalley.org/', '2026-08-30', 'official_page', 'normal'),
+  ('event', 'ndia-tennessee-valley', 'dates', 'Year-round. ⟦VERIFY: current chapter dates⟧', 'https://www.ndiatennvalley.org/', '2026-08-30', 'secondary', 'normal'),
   ('event', 'smd-symposium', 'name', 'Space and Missile Defense Symposium', 'https://smdsymposium.org', '2026-08-30', 'official_page', 'normal'),
   ('event', 'smd-symposium', 'dates', '⟦VERIFY: next occurrence dates; brief cites Aug 10–12, 2027⟧', 'https://smdsymposium.org', '2026-08-30', 'secondary', 'normal'),
-  ('event', 'hsv-chamber', 'name', 'Huntsville/Madison County Chamber — Team Redstone', 'https://hsvchamber.org/team-redstone', '2026-08-30', 'official_page', 'normal');
+  ('event', 'hsv-chamber', 'name', 'Huntsville/Madison County Chamber — Team Redstone', 'https://hsvchamber.org/team-redstone', '2026-08-30', 'official_page', 'normal'),
+  ('event', 'hsv-chamber', 'cost', '⟦VERIFY: Chamber programs are often membership- or fee-based. Do not describe them as free without checking.⟧', 'https://hsvchamber.org/team-redstone', '2026-08-30', 'secondary', 'normal');
 
 insert into public.changes (headline, detail, source_url, effective_date) values
   ('CMMC Phase II suspended', 'The November 10, 2026 deadline for mandatory Level 2 third-party (C3PAO) certification is no longer in effect. Level 1 self-assessment and DFARS 252.204-7012/7019/7020 remain in force.', 'https://dodcio.defense.gov/Portals/0/Documents/Library/ImplementingSuspensionCMMC-PhaseII.pdf', '2026-07-13'),

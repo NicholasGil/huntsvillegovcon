@@ -64,10 +64,13 @@ export default async function GuideModulePage({
       </p>
       <h1 className="mt-3 font-serif text-4xl text-ink">{guideModule.title}</h1>
       <p className="mt-4 max-w-xl text-muted">{guideModule.purpose}</p>
-      {guideModule.slug === "who-buys" || guideModule.slug === "the-primes" ? (
+      {guideModule.slug === "who-buys" ||
+      guideModule.slug === "the-primes" ||
+      guideModule.slug === "free-help" ||
+      guideModule.slug === "showing-up" ? (
         <p className="mt-4 max-w-xl text-sm text-muted">
-          Confirm every government or prime contact on the source page before
-          you call. Names rotate.
+          Confirm every government or event contact on the source page before
+          you call. Names and dates rotate.
         </p>
       ) : null}
       {orderedFacts.length > 0 ? <FactList facts={orderedFacts} /> : null}

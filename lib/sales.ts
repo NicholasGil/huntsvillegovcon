@@ -2,7 +2,7 @@ export const salesCopy = {
   notThis: [
     "This is not a course. Nobody here is going to teach you a proven system, and there isn't one.",
     "This is not coaching. I'm not a former contracting officer and I've never won a federal contract. What I've done is spend the research hours pulling every published small-business contact, requirement, and program status for this specific market into one place, with sources and dates attached, at a moment when almost everything written before this year is out of date.",
-    "And this is not a replacement for the free help. Alabama's APEX Accelerator, funded by the Defense Department, gives free one-on-one procurement counseling out of an office at UAH. If you've never done this before, call them first. The number is below, and it's in the free sample. This guide is the map you read before and between those conversations, not a substitute for them.",
+    "And this is not a replacement for the free help. Alabama's APEX Accelerator, funded by the Defense Department, gives free one-on-one procurement counseling out of an office at UAH. If you've never done this before, call them first — the number's below, and it's in the free sample. This guide is the map you read before and between those conversations, not a substitute for them.",
   ],
   mechanism:
     "Nine modules. Every government contact with the .gov page it came from. Every prime's small business portal, and an honest note where one doesn't exist. What CMMC actually requires today versus what's suspended. Which certifications can still be self-certified — none of them, as of December 2024, which is news to most of the internet. And a public changelog so you can see what moved since you bought.",

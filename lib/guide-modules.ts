@@ -103,7 +103,8 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
       "NIST SP 800-171 Rev 3 transition timing",
     ],
     matchesFact: (fact) =>
-      fact.entity_type === "regulation" && fact.entity_slug === "cmmc",
+      fact.entity_type === "regulation" &&
+      (fact.entity_slug === "cmmc" || fact.entity_slug === "nist-800-171"),
   },
   {
     slug: "finding-work",
@@ -111,10 +112,9 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
     title: "Finding Work",
     purpose:
       "SAM.gov, sources sought over solicitations, SubNet, DSBS, USAspending, Rule of Two. Do not chase GSA Schedule first.",
-    unverified: [
-      "current DoD SBIR portal URL after the Department of War rebrand",
-    ],
-    matchesFact: () => false,
+    unverified: [],
+    matchesFact: (fact) =>
+      fact.entity_type === "resource" && fact.entity_slug === "dod-portals",
   },
   {
     slug: "showing-up",
@@ -126,6 +126,7 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
       "current APBI dates via AMCOM news releases",
       "NDIA Tennessee Valley year-round dates",
       "SMD Symposium next-occurrence dates",
+      "Chamber Team Redstone fee or membership status",
     ],
     matchesFact: (fact) => fact.entity_type === "event",
   },

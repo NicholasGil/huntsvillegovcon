@@ -4,9 +4,15 @@ import { isHttpUrl, type SeedFact } from "@/lib/seed-facts";
 export type SourcedFactView = Pick<
   SeedFact,
   "value" | "source_url" | "verified_at" | "verification_method"
->;
+> & {
+  field?: string;
+};
+
+const CONTACT_FIELDS = new Set(["phone", "email", "address", "sb_contact"]);
 
 export function SourcedFact({ fact }: { fact: SourcedFactView }) {
+  const confirm = fact.field ? CONTACT_FIELDS.has(fact.field) : false;
+
   return (
     <span>
       {isHttpUrl(fact.value) ? (
@@ -31,6 +37,9 @@ export function SourcedFact({ fact }: { fact: SourcedFactView }) {
         )}
         , verified {fact.verified_at})
       </span>
+      {confirm ? (
+        <span className="text-muted"> Confirm before you call.</span>
+      ) : null}
     </span>
   );
 }
