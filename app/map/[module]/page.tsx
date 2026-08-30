@@ -8,11 +8,7 @@ import { PageShell } from "@/components/page-shell";
 import { VerifyToken } from "@/components/verify-token";
 import { canReadGuide, getEntitlement } from "@/lib/entitlement";
 import { getPublishedFacts } from "@/lib/facts";
-import {
-  GUIDE_MODULES,
-  getGuideModule,
-  isGuideModuleSlug,
-} from "@/lib/guide-modules";
+import { GUIDE_MODULES, getGuideModule } from "@/lib/guide-modules";
 import { AGENCY_SLUGS, ALL_PRIME_SLUGS, slugOrder } from "@/lib/seed-facts";
 
 export const dynamicParams = false;
@@ -78,9 +74,7 @@ export default async function GuideModulePage({
           you call. Names and dates rotate.
         </p>
       ) : null}
-      {isGuideModuleSlug(guideModule.slug) ? (
-        <ModuleBody slug={guideModule.slug} />
-      ) : null}
+      <ModuleBody slug={guideModule.slug} />
       {orderedFacts.length > 0 ? (
         <section className="mt-10">
           <h2 className="font-serif text-2xl text-ink">Sourced facts</h2>

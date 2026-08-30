@@ -32,7 +32,7 @@ export type ModulePageCopy = {
   sections: readonly ModuleSection[];
 };
 
-export const MODULE_COPY = {
+export const MODULE_COPY: Record<GuideModuleSlug, ModulePageCopy> = {
   "start-here": {
     lead:
       "Use this page as a 10-minute snapshot. Check the boxes, pick one of the four paths, then open the sourced facts below. This is not a downloadable worksheet.",
@@ -392,4 +392,4 @@ export const MODULE_COPY = {
       },
     ],
   },
-} as const satisfies Record<GuideModuleSlug, ModulePageCopy>;
+};

@@ -11,8 +11,19 @@ import {
   type SeedFact,
 } from "@/lib/seed-facts";
 
+export type GuideModuleSlug =
+  | "start-here"
+  | "free-help"
+  | "getting-registered"
+  | "who-buys"
+  | "the-primes"
+  | "set-asides"
+  | "compliance-floor"
+  | "finding-work"
+  | "showing-up";
+
 export type GuideModule = {
-  slug: string;
+  slug: GuideModuleSlug;
   number: number;
   title: string;
   purpose: string;
@@ -146,8 +157,6 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
     matchesFact: (fact) => fact.entity_type === "event",
   },
 ];
-
-export type GuideModuleSlug = (typeof GUIDE_MODULES)[number]["slug"];
 
 export function getGuideModule(slug: string): GuideModule | null {
   return GUIDE_MODULES.find((module) => module.slug === slug) ?? null;
