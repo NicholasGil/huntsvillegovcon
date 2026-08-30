@@ -3,12 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FactList } from "@/components/fact-list";
 import { AccessGate } from "@/components/gate";
+import { ModuleBody } from "@/components/module-body";
 import { PageShell } from "@/components/page-shell";
 import { VerifyToken } from "@/components/verify-token";
 import { canReadGuide, getEntitlement } from "@/lib/entitlement";
 import { getPublishedFacts } from "@/lib/facts";
-import { GUIDE_MODULES, getGuideModule } from "@/lib/guide-modules";
-import { AGENCY_SLUGS, PRIME_SLUGS, slugOrder } from "@/lib/seed-facts";
+import {
+  GUIDE_MODULES,
+  getGuideModule,
+  isGuideModuleSlug,
+} from "@/lib/guide-modules";
+import { AGENCY_SLUGS, ALL_PRIME_SLUGS, slugOrder } from "@/lib/seed-facts";
 
 export const dynamicParams = false;
 
@@ -48,7 +53,7 @@ export default async function GuideModulePage({
     guideModule.slug === "who-buys"
       ? AGENCY_SLUGS
       : guideModule.slug === "the-primes"
-        ? PRIME_SLUGS
+        ? ALL_PRIME_SLUGS
         : null;
   const orderedFacts = slugRanks
     ? [...facts].sort((a, b) => {
@@ -73,7 +78,15 @@ export default async function GuideModulePage({
           you call. Names and dates rotate.
         </p>
       ) : null}
-      {orderedFacts.length > 0 ? <FactList facts={orderedFacts} /> : null}
+      {isGuideModuleSlug(guideModule.slug) ? (
+        <ModuleBody slug={guideModule.slug} />
+      ) : null}
+      {orderedFacts.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="font-serif text-2xl text-ink">Sourced facts</h2>
+          <FactList facts={orderedFacts} />
+        </section>
+      ) : null}
       {guideModule.unverified.length > 0 ? (
         <div className="mt-10 max-w-xl space-y-3 text-muted">
           {guideModule.unverified.map((item) => (

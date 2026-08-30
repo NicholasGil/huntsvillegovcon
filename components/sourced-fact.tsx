@@ -8,7 +8,13 @@ export type SourcedFactView = Pick<
   field?: string;
 };
 
-const CONTACT_FIELDS = new Set(["phone", "email", "address", "sb_contact"]);
+const CONTACT_FIELDS = new Set([
+  "phone",
+  "email",
+  "address",
+  "sb_contact",
+  "booking",
+]);
 
 export function SourcedFact({ fact }: { fact: SourcedFactView }) {
   const confirm = fact.field ? CONTACT_FIELDS.has(fact.field) : false;

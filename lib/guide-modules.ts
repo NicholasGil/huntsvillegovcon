@@ -1,7 +1,13 @@
 import {
   AGENCY_SLUGS,
+  ALL_PRIME_SLUGS,
+  COMPLIANCE_RESOURCE_SLUGS,
+  COMPLIANCE_SLUGS,
+  FINDING_WORK_SLUGS,
   FREE_HELP_SLUGS,
-  PRIME_SLUGS,
+  REGISTRATION_SLUGS,
+  SET_ASIDE_SLUGS,
+  isStartHereFact,
   type SeedFact,
 } from "@/lib/seed-facts";
 
@@ -15,8 +21,13 @@ export type GuideModule = {
 };
 
 const agencySlugs: readonly string[] = AGENCY_SLUGS;
-const primeSlugs: readonly string[] = PRIME_SLUGS;
+const primeSlugs: readonly string[] = ALL_PRIME_SLUGS;
 const freeHelpSlugs: readonly string[] = FREE_HELP_SLUGS;
+const registrationSlugs: readonly string[] = REGISTRATION_SLUGS;
+const setAsideSlugs: readonly string[] = SET_ASIDE_SLUGS;
+const complianceSlugs: readonly string[] = COMPLIANCE_SLUGS;
+const complianceResourceSlugs: readonly string[] = COMPLIANCE_RESOURCE_SLUGS;
+const findingWorkSlugs: readonly string[] = FINDING_WORK_SLUGS;
 
 export const GUIDE_MODULES: readonly GuideModule[] = [
   {
@@ -25,10 +36,8 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
     title: "Start Here: Where You Actually Are",
     purpose:
       "Readiness snapshot in the first 10 minutes: registered or not, certification eligibility, compliance floor, prime vs. sub, which free program to call first.",
-    unverified: [
-      "the four-path readiness worksheet and the thresholds it uses",
-    ],
-    matchesFact: () => false,
+    unverified: [],
+    matchesFact: isStartHereFact,
   },
   {
     slug: "free-help",
@@ -40,6 +49,7 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
       "SCORE Huntsville booking path",
       "SBA 7(j) / Empower to Grow current enrollment URL",
       "DAU public course list relevant to new vendors",
+      "UAH SBDC booking path",
     ],
     matchesFact: (fact) =>
       fact.entity_type === "resource" && freeHelpSlugs.includes(fact.entity_slug),
@@ -52,7 +62,8 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
       "UEI, CAGE, SAM.gov (always free), NAICS, size standards. Registration is always free.",
     unverified: [],
     matchesFact: (fact) =>
-      fact.entity_type === "program" && fact.entity_slug === "sam-gov",
+      fact.entity_type === "program" &&
+      registrationSlugs.includes(fact.entity_slug),
   },
   {
     slug: "who-buys",
@@ -74,11 +85,12 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
     purpose:
       "Boeing, Lockheed, Northrop, Leidos/Dynetics, RTX, L3Harris/Aerojet, Sierra Space, and Huntsville mid-tiers. FAR 19.7 reframe. Portal gaps stated plainly.",
     unverified: [
-      "public small-business supplier portals for Lockheed, Northrop, Leidos, RTX, L3Harris, and Sierra Space",
-      "Huntsville mid-tier outreach paths (Blue Origin, Torch, COLSA, Quantum, Davidson: no public SB portal found)",
+      "current FAR 19.702 dollar thresholds",
+      "official homepage URLs for Blue Origin, Torch, COLSA, Quantum, and Davidson",
     ],
     matchesFact: (fact) =>
-      fact.entity_type === "prime" && primeSlugs.includes(fact.entity_slug),
+      (fact.entity_type === "prime" && primeSlugs.includes(fact.entity_slug)) ||
+      (fact.entity_type === "regulation" && fact.entity_slug === "far-19-7"),
   },
   {
     slug: "set-asides",
@@ -90,7 +102,8 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
       "8(a) social-disadvantage rule effective date and any litigation",
     ],
     matchesFact: (fact) =>
-      (fact.entity_type === "program" && fact.entity_slug === "set-asides") ||
+      (fact.entity_type === "program" &&
+        setAsideSlugs.includes(fact.entity_slug)) ||
       (fact.entity_type === "regulation" && fact.entity_slug === "8a"),
   },
   {
@@ -99,12 +112,12 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
     title: "The Compliance Floor",
     purpose:
       "CMMC current status from the facts table, DFARS 7012/7019/7020, SPRS, NIST 800-171. Phase II suspended July 13, 2026; L1 and DFARS still in force.",
-    unverified: [
-      "NIST SP 800-171 Rev 3 transition timing",
-    ],
+    unverified: ["NIST SP 800-171 Rev 3 transition timing"],
     matchesFact: (fact) =>
-      fact.entity_type === "regulation" &&
-      (fact.entity_slug === "cmmc" || fact.entity_slug === "nist-800-171"),
+      (fact.entity_type === "regulation" &&
+        complianceSlugs.includes(fact.entity_slug)) ||
+      (fact.entity_type === "resource" &&
+        complianceResourceSlugs.includes(fact.entity_slug)),
   },
   {
     slug: "finding-work",
@@ -114,7 +127,9 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
       "SAM.gov, sources sought over solicitations, SubNet, DSBS, USAspending, Rule of Two. Do not chase GSA Schedule first.",
     unverified: [],
     matchesFact: (fact) =>
-      fact.entity_type === "resource" && fact.entity_slug === "dod-portals",
+      fact.entity_type === "resource" &&
+      (findingWorkSlugs.includes(fact.entity_slug) ||
+        fact.entity_slug === "dod-portals"),
   },
   {
     slug: "showing-up",

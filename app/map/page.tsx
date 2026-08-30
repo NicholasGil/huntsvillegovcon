@@ -24,8 +24,9 @@ export default async function GuideIndexPage() {
     <PageShell>
       <h1 className="font-serif text-4xl text-ink">Map modules</h1>
       <p className="mt-4 max-w-xl text-muted">
-        Nine modules. Module 2 has the free-help contacts. Module 7 reads CMMC
-        status from the facts table. Unverified items stay marked.
+        Nine modules. Module 1 is the on-page readiness snapshot. Module 2 has
+        the free-help contacts. Module 7 reads CMMC status from the facts
+        table. Unverified items stay marked.
       </p>
       <ol className="mt-10 max-w-xl space-y-4">
         {GUIDE_MODULES.map((entry) => (
