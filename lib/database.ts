@@ -1,4 +1,4 @@
-export type EntitlementTier = "guide" | "toolkit" | "updates";
+export type EntitlementTier = "map" | "toolkit" | "updates";
 export type FactEntityType =
   | "agency"
   | "prime"

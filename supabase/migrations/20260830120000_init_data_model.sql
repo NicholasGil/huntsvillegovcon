@@ -1,4 +1,4 @@
--- Entitlement tiers are guide | toolkit | updates.
+-- Entitlement tiers are map | toolkit | updates.
 -- Checkout amounts 199 / 399 / 599 map onto those three values in the webhook.
 
 create extension if not exists pgcrypto;
@@ -7,7 +7,7 @@ create table public.entitlements (
   id uuid primary key default gen_random_uuid(),
   user_id uuid references auth.users (id),
   email text not null,
-  tier text not null check (tier in ('guide', 'toolkit', 'updates')),
+  tier text not null check (tier in ('map', 'toolkit', 'updates')),
   stripe_session_id text unique not null,
   stripe_payment_intent text,
   purchased_at timestamptz not null default now(),
@@ -120,7 +120,7 @@ as $$
     select 1
     from public.entitlements e
     where e.refunded_at is null
-      and e.tier in ('guide', 'toolkit', 'updates')
+      and e.tier in ('map', 'toolkit', 'updates')
       and (
         e.user_id = auth.uid()
         or lower(e.email) = public.jwt_email()

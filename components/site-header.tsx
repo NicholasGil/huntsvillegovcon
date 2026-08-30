@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 const nav = [
   { href: "/sample", label: "Sample" },
   { href: "/whats-changed", label: "What's changed" },
-  { href: "/guide", label: "Map" },
+  { href: "/map", label: "Map" },
   { href: "/account", label: "Account" },
   { href: "/contact", label: "Contact" },
 ] as const;

@@ -41,7 +41,7 @@ export const salesCopy = {
     {
       question: "How do I open the map after I pay?",
       answer:
-        "Stripe takes the payment. A magic-link email goes to the checkout address. Open the link, then go to /guide. If you bought with a different email than the one you are signed in with, request a link from /account.",
+        "Stripe takes the payment. A magic-link email goes to the checkout address. Open the link, then go to /map. If you bought with a different email than the one you are signed in with, request a link from /account.",
     },
     {
       question: "How do refunds work?",

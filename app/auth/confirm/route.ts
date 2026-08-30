@@ -4,7 +4,7 @@ import { getAppEnv } from "@/lib/env";
 
 function safeNextPath(value: string | null): string {
   if (!value || !value.startsWith("/") || value.startsWith("//")) {
-    return "/guide";
+    return "/map";
   }
   return value;
 }

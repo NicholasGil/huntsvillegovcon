@@ -15,7 +15,7 @@ export default async function GuideIndexPage() {
   if (!canReadGuide(entitlement)) {
     return (
       <PageShell>
-        <AccessGate entitlement={entitlement} need="guide" />
+        <AccessGate entitlement={entitlement} need="map" />
       </PageShell>
     );
   }
@@ -31,7 +31,7 @@ export default async function GuideIndexPage() {
         {GUIDE_MODULES.map((entry) => (
           <li key={entry.slug}>
             <Link
-              href={`/guide/${entry.slug}`}
+              href={`/map/${entry.slug}`}
               className="font-serif text-xl text-ink hover:text-brick"
             >
               {entry.number}. {entry.title}
@@ -41,7 +41,7 @@ export default async function GuideIndexPage() {
         ))}
       </ol>
       <p className="mt-10">
-        <Link href="/guide/tools" className="text-brick hover:underline">
+        <Link href="/map/tools" className="text-brick hover:underline">
           Toolkit
         </Link>
       </p>

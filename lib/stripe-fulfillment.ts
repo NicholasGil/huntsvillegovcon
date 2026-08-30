@@ -45,7 +45,7 @@ function readProductTier(session: Stripe.Checkout.Session): EntitlementTier | nu
   if (typeof raw !== "string") {
     return null;
   }
-  if (raw === "guide" || raw === "toolkit" || raw === "updates") {
+  if (raw === "map" || raw === "toolkit" || raw === "updates") {
     return raw;
   }
   if (!isPriceTierMetadata(raw)) {

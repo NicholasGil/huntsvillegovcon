@@ -6,7 +6,7 @@ export function AccessGate({
   need,
 }: {
   entitlement: Entitlement;
-  need: "guide" | "toolkit";
+  need: "map" | "toolkit";
 }) {
   const title =
     need === "toolkit"

@@ -8,6 +8,8 @@ This is a paid Huntsville / Redstone contracting reference. Agents and humans sh
 - Never imply government affiliation. No agency seals, no .gov-styled branding, no product name containing SBA, GSA, SAM, DoD, Army, or Official. The product name is Huntsville Contract Map. Do not use a Redstone-containing product name.
 - Every buyer-facing fact needs a source URL and an as-of date. CMMC status belongs in the facts table with a verification date. Do not hardcode it as static copy.
 - App Router only. No `pages/`, no `getServerSideProps`, no `getStaticProps`, no `middleware.ts`. Request interception is `proxy.ts` with `export function proxy` on the Node.js runtime.
+- Gated buyer routes are `/map`, `/map/[module]`, and `/map/tools`. Do not revive `/guide`.
+- Stored entitlement values are `map`, `toolkit`, and `updates`. TypeScript flags stay `hasGuide`, `hasToolkit`, and `hasUpdates`. There is no `hasCall` and no consulting-call tier.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

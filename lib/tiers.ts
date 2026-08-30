@@ -14,7 +14,7 @@ export type EntitlementSource = {
 
 export function productTierFromPrice(price: PricingTierId): EntitlementTier {
   if (price === "199") {
-    return "guide";
+    return "map";
   }
   if (price === "399") {
     return "toolkit";
@@ -23,7 +23,7 @@ export function productTierFromPrice(price: PricingTierId): EntitlementTier {
 }
 
 export function flagsForProductTier(tier: EntitlementTier): EntitlementFlags {
-  if (tier === "guide") {
+  if (tier === "map") {
     return { hasGuide: true, hasToolkit: false, hasUpdates: false };
   }
   if (tier === "toolkit") {
@@ -57,7 +57,7 @@ export function flagsFromEntitlementRows(
   let hasUpdates = false;
 
   for (const row of rows) {
-    if (row.tier !== "guide" && row.tier !== "toolkit" && row.tier !== "updates") {
+    if (row.tier !== "map" && row.tier !== "toolkit" && row.tier !== "updates") {
       continue;
     }
     const flags = flagsForProductTier(row.tier);

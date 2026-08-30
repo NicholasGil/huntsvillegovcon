@@ -42,7 +42,7 @@ export default async function GuideModulePage({
   if (!canReadGuide(entitlement)) {
     return (
       <PageShell>
-        <AccessGate entitlement={entitlement} need="guide" />
+        <AccessGate entitlement={entitlement} need="map" />
       </PageShell>
     );
   }
@@ -85,7 +85,7 @@ export default async function GuideModulePage({
         </div>
       ) : null}
       <p className="mt-10">
-        <Link href="/guide" className="text-brick hover:underline">
+        <Link href="/map" className="text-brick hover:underline">
           All modules
         </Link>
       </p>

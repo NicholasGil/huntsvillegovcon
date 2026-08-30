@@ -20,11 +20,13 @@ npm run dev
 
 ## Tiers
 
-| Amount | Entitlement | Notes |
-| --- | --- | --- |
-| $199 | `hasGuide` | Current edition. Lifetime access to that edition. |
-| $399 | `hasGuide` + `hasToolkit` | Target tier. Worksheets the buyer fills in. |
-| $599 | those plus `hasUpdates` | One-time 12-month purchase. No auto-renew. |
+| Amount | Row tier | Flags | Notes |
+| --- | --- | --- | --- |
+| $199 | `map` | `hasGuide` | Current edition. Lifetime access to that edition. |
+| $399 | `toolkit` | `hasGuide` + `hasToolkit` | Target tier. Worksheets the buyer fills in. |
+| $599 | `updates` | those plus `hasUpdates` | One-time 12-month purchase. No auto-renew. |
+
+Gated routes are `/map`, `/map/[module]`, and `/map/tools`.
 
 There is no consulting-call tier.
 
