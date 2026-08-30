@@ -38,14 +38,14 @@ export async function POST(request: Request) {
 
   if (!tierValue || !isPricingTierId(tierValue)) {
     if (html) {
-      return NextResponse.redirect(new URL("/?checkout=invalid-tier", env.siteUrl), 303);
+      return NextResponse.redirect(new URL("/checkout/error?checkout=invalid-tier", env.siteUrl), 303);
     }
     return NextResponse.json({ error: "Unknown pricing tier." }, { status: 400 });
   }
 
   if (env.stripe.kind === "missing") {
     if (html) {
-      return NextResponse.redirect(new URL("/?checkout=not-configured", env.siteUrl), 303);
+      return NextResponse.redirect(new URL("/checkout/error?checkout=not-configured", env.siteUrl), 303);
     }
     return NextResponse.json(
       { error: "Stripe is not configured. Set STRIPE_SECRET_KEY." },
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
   const priceId = env.stripe.priceIds[tierValue];
   if (!priceId) {
     if (html) {
-      return NextResponse.redirect(new URL("/?checkout=missing-price", env.siteUrl), 303);
+      return NextResponse.redirect(new URL("/checkout/error?checkout=missing-price", env.siteUrl), 303);
     }
     return NextResponse.json(
       { error: `Set STRIPE_PRICE_ID_${tierValue} before creating a session.` },

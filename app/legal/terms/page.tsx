@@ -51,6 +51,17 @@ export default function TermsPage() {
         Transactional email may go through Supabase Auth and, when configured,
         a separate email provider.
       </p>
+      <h2 className="pt-4 font-serif text-2xl text-ink">Cookies</h2>
+      <p>
+        Sign-in uses session cookies from Supabase. This site does not ship a
+        tag manager or a separate analytics product.
+      </p>
+      <h2 className="pt-4 font-serif text-2xl text-ink">Retention</h2>
+      <p>
+        We keep purchase emails so we can honor access and refunds. We keep
+        sample-form emails so we can send the free-help sample.{" "}
+        <VerifyToken>retention schedule for leads and entitlements</VerifyToken>
+      </p>
       <h2 className="pt-4 font-serif text-2xl text-ink">Contact</h2>
       <p>
         Use the{" "}

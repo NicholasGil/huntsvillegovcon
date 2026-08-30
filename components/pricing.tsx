@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CheckoutForm } from "@/components/checkout-form";
 import { hero, pricingTiers } from "@/lib/site";
 
@@ -51,6 +52,21 @@ export function Pricing() {
           );
         })}
       </div>
+      <p className="mt-6 max-w-2xl text-sm text-muted">
+        Checkout is a one-time Stripe payment. See{" "}
+        <Link href="/legal/terms" className="text-brick hover:underline">
+          terms
+        </Link>
+        ,{" "}
+        <Link href="/legal/refunds" className="text-brick hover:underline">
+          refunds
+        </Link>
+        , and the{" "}
+        <Link href="/legal/disclaimer" className="text-brick hover:underline">
+          disclaimer
+        </Link>
+        .
+      </p>
     </section>
   );
 }

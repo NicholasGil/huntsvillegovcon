@@ -34,9 +34,8 @@ export default function PrivacyPage() {
       </p>
       <h2 className="pt-4 font-serif text-2xl text-ink">Cookies and analytics</h2>
       <p>
-        Sign-in uses session cookies from Supabase. Checkout error messages on
-        the sales page read a query string in the browser. This codebase does
-        not include a separate analytics product.
+        Sign-in uses session cookies from Supabase. This codebase does not
+        include a tag manager or a separate analytics product.
       </p>
       <h2 className="pt-4 font-serif text-2xl text-ink">Retention</h2>
       <p>

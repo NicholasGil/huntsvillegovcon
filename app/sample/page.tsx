@@ -21,7 +21,8 @@ export default function SamplePage() {
       <p className="mt-4 max-w-xl text-muted">
         This is the free-resources module. APEX and the UAH SBDC give
         procurement advising at no cost. The SBA Alabama District Office is in
-        Birmingham. Every line has a source and the date it was verified.
+        Birmingham. Confirm every number and address before you call. Every
+        line has a source and the date it was verified.
       </p>
       <dl className="mt-10 max-w-xl space-y-5">
         {facts.map((fact) => (

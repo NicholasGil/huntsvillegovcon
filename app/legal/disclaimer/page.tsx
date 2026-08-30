@@ -13,13 +13,15 @@ export default function DisclaimerPage() {
   return (
     <LegalPage title="Disclaimer">
       <p>
-        {site.name} is an independent product. It is not affiliated with or
-        endorsed by the U.S. government, SAM.gov, GSA, SBA, the Department of
-        War or Defense, the Army, NASA, or Redstone Arsenal.
+        {site.name} is an independent product. It is informational only. It is
+        not legal, accounting, procurement, or cybersecurity advice.
       </p>
       <p>
-        The product is educational information only. It is not legal,
-        accounting, or procurement advice.
+        It is not affiliated with or endorsed by the U.S. government, SAM.gov,
+        GSA, SBA, the Department of War or Defense, the Army, NASA, Redstone
+        Arsenal, ACC-RSA, AMCOM, SMDC, MDA, NASA MSFC, AMC, USACE, DLA, or any
+        named prime, including Boeing, Lockheed Martin, Northrop Grumman,
+        Leidos, Dynetics, RTX, L3Harris, Aerojet, or Sierra Space.
       </p>
       <p>
         SAM.gov registration and SBA certifications are free through official
@@ -27,13 +29,15 @@ export default function DisclaimerPage() {
         registration service.
       </p>
       <p>
-        Regulations and contacts change. Verify every fact on the source page
-        before you rely on it. The date on a fact is the date we checked the
-        source, not a promise that the source is still current.
+        Regulations and contacts change. Verify every fact with the issuing
+        office and on the source page before you rely on it. The date on a fact
+        is the date we checked the source, not a promise that the source is
+        still current.
       </p>
       <p>
         No outcome of any kind is promised. This site does not promise an
-        award, a certification, introductions, leads, or bid submission.
+        award, a certification, a contract, introductions, leads, or bid
+        submission.
       </p>
       <p>
         If a sourced fact is wrong, use the{" "}

@@ -1,7 +1,5 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import { CheckoutForm } from "@/components/checkout-form";
-import { CheckoutNotice } from "@/components/checkout-notice";
 import { Pricing } from "@/components/pricing";
 import { SampleOptInForm } from "@/components/sample-opt-in-form";
 import { SourcedFact } from "@/components/sourced-fact";
@@ -31,9 +29,6 @@ export function SalesPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-6 py-16 sm:py-24">
-      <Suspense fallback={null}>
-        <CheckoutNotice />
-      </Suspense>
       <section aria-labelledby="hero-heading">
         <p className="text-sm uppercase tracking-[0.18em] text-muted">{site.name}</p>
         <h1
@@ -130,7 +125,8 @@ export function SalesPage() {
           APEX Accelerator of Alabama sits with the UAH Small Business
           Development Center. apexal.org states advising is at no cost. Call
           them before you buy a paid map. The SBA Alabama District Office is in
-          Birmingham. There is no Huntsville satellite.
+          Birmingham. There is no Huntsville satellite. Confirm every number
+          and address before you call. Each line links to its source.
         </p>
         <dl className="mt-6 max-w-2xl space-y-4">
           {freeHelp.map((fact) => (
@@ -185,7 +181,7 @@ export function SalesPage() {
           </Link>
           .
         </p>
-        <SampleOptInForm className="mt-6 max-w-md" />
+        <SampleOptInForm next="/" className="mt-6 max-w-md" />
       </section>
 
       <section aria-labelledby="who-heading" className="mt-20">
