@@ -79,6 +79,7 @@ export async function POST(request: Request) {
     {
       mode: "payment",
       line_items: [{ price: priceId, quantity: 1 }],
+      automatic_tax: { enabled: false },
       success_url: `${env.siteUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${env.siteUrl}/`,
       metadata: { tier: tierValue },

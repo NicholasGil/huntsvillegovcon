@@ -8,9 +8,7 @@ export const metadata: Metadata = {
 
 export default async function LoginPage({
   searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
+}: PageProps<"/login">) {
   const query = await searchParams;
   const status = typeof query.status === "string" ? query.status : null;
   const error = typeof query.error === "string" ? query.error : null;
