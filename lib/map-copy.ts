@@ -50,7 +50,7 @@ export const MODULE_COPY: Record<GuideModuleSlug, ModulePageCopy> = {
       {
         question: "Will you handle CUI or are you looking at CMMC Phase II?",
         ifYes:
-          "Take path 4. Phase II is suspended. Level 1 and DFARS 7012/7019/7020 are still in force.",
+          "Take path 4. Read the CMMC Phase II status fact on this page. That row is dated.",
         ifNo: "You still need an active SAM record before you answer sources sought.",
       },
       {
@@ -100,8 +100,8 @@ export const MODULE_COPY: Record<GuideModuleSlug, ModulePageCopy> = {
         title: "Path 4. CUI or CMMC Phase II",
         when: "You expect covered defense information, or someone told you to get CMMC Level 2 now.",
         then: [
-          "Phase II was suspended July 13, 2026. New procurements currently cannot designate a Level 2 or Level 3 assessment requirement.",
-          "Level 1 self-assessment and DFARS 252.204-7012/7019/7020 remain in force.",
+          "Read the CMMC Phase II status fact on this page. Do not take a status from this path. The fact row has the source and the date.",
+          "DFARS 7012/7019/7020, SPRS, and DIBNet are in the same sourced list and on the compliance-floor module.",
           "DCAA-approved accounting is not required for most firm-fixed-price small-business awards. The published exception is FFP over $10 million.",
           "This map does not publish C3PAO cost figures.",
         ],
@@ -301,14 +301,6 @@ export const MODULE_COPY: Record<GuideModuleSlug, ModulePageCopy> = {
       "This map does not publish C3PAO cost figures.",
     ],
     sections: [
-      {
-        heading: "CMMC right now",
-        paragraphs: [
-          "Phase II was suspended July 13, 2026. New procurements currently cannot designate a Level 2 or Level 3 assessment requirement, and waiver procedures are halted pending a 60-day CIO review.",
-          "Level 1 self-assessment remains in force. Source. https://dodcio.defense.gov/Portals/0/Documents/Library/ImplementingSuspensionCMMC-PhaseII.pdf",
-          "NIST SP 800-171 Rev 3 transition timing is unmarked. CMMC L2 still maps to Rev 2 in the cited DoD CIO material.",
-        ],
-      },
       {
         heading: "DFARS clauses still in force",
         paragraphs: [

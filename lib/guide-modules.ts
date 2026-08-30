@@ -122,7 +122,7 @@ export const GUIDE_MODULES: readonly GuideModule[] = [
     number: 7,
     title: "The Compliance Floor",
     purpose:
-      "CMMC current status from the facts table, DFARS 7012/7019/7020, SPRS, NIST 800-171. Phase II suspended July 13, 2026; L1 and DFARS still in force.",
+      "CMMC current status from the facts table, DFARS 7012/7019/7020, SPRS, NIST 800-171.",
     unverified: ["NIST SP 800-171 Rev 3 transition timing"],
     matchesFact: (fact) =>
       (fact.entity_type === "regulation" &&
