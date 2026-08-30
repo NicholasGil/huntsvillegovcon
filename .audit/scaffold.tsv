@@ -20,3 +20,4 @@ ts	phase	decision	why	evidence	result
 2026-08-30T06:20:00Z	sales	remove client JS from the sales page; checkout errors go to /checkout/error	spec allows client JS only for the CTA; CheckoutForm is a native POST	components/sales-page.tsx components/sample-opt-in-form.tsx app/checkout/error/page.tsx	CheckoutNotice deleted
 2026-08-30T06:20:00Z	domain	keep entitlements.tier as map not guide	later spec 4.8–14 still queued and already applied	lib/tiers.ts	no enum revert
 2026-08-30T06:21:00Z	verify	typegen tsc and lint green after disclaimer and sales-page JS cut	matching surface for legal copy and a new /checkout/error route	npx next typegen; npx tsc --noEmit; npm run lint	green
+2026-08-30T06:22:00Z	verify	npm install lint tsc and next build are green on this branch	queued verify pass; no code fix required	npm install; npm run lint; npx next typegen; npx tsc --noEmit; npm run build	green
