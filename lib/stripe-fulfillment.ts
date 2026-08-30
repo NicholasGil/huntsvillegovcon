@@ -81,19 +81,32 @@ async function markProcessed(eventId: string): Promise<void> {
   }
 }
 
-export async function sendPurchaseMagicLink(email: string): Promise<void> {
+export type MagicLinkSend =
+  | { kind: "sent" }
+  | { kind: "skipped" }
+  | { kind: "failed"; reason: string };
+
+export async function sendPurchaseMagicLink(email: string): Promise<MagicLinkSend> {
   const admin = createSupabaseAdminClient();
   const env = getAppEnv();
   if (!admin) {
-    return;
+    return { kind: "skipped" };
   }
 
-  await admin.auth.signInWithOtp({
-    email,
-    options: {
-      emailRedirectTo: `${env.siteUrl}/auth/confirm`,
-    },
-  });
+  try {
+    await admin.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: `${env.siteUrl}/auth/confirm`,
+      },
+    });
+    return { kind: "sent" };
+  } catch (error) {
+    return {
+      kind: "failed",
+      reason: error instanceof Error ? error.message : "magic-link-send-failed",
+    };
+  }
 }
 
 export async function fulfillStripeEvent(

@@ -44,9 +44,8 @@ export async function POST(request: Request) {
 
   if (result.kind === "applied") {
     after(async () => {
-      try {
-        await sendPurchaseMagicLink(result.email);
-      } catch {}
+      const mail = await sendPurchaseMagicLink(result.email);
+      void mail;
     });
   }
 

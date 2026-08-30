@@ -24,3 +24,6 @@ ts	phase	decision	why	evidence	result
 2026-08-30T06:25:00Z	spec	keep /map and map|toolkit|updates; fill event and Regulatory Watch rows from spec 4.8–14	this document wins over companion /guide and guide enum	lib/seed-facts.ts supabase/migrations/20260830120100_seed_sourced_facts.sql	NDIA URL ndiatennvalley.org; NIST and DoD portals high
 2026-08-30T06:25:00Z	sales	keep spec 6.3 what-this-is-not including the proven-system negation	exact block required; banned-phrase grep will hit that sentence and the required credibility line	lib/sales.ts	6.3 copy aligned
 2026-08-30T06:25:00Z	facts	do not publish a typical-time-to-first-award statistic	spec 4.8; research could not source one	grep	absent
+2026-08-30T06:26:00Z	verify	lint tsc and next build green after spec 4.8–14 fact fill	prove it works on the production build	npm run lint; npx next typegen; npx tsc --noEmit; npm run build	green
+2026-08-30T06:28:00Z	webhook	name magic-link send as sent|skipped|failed instead of an empty catch	Comment Sicko must-kill; entitlement write still returns 2xx first	lib/stripe-fulfillment.ts app/api/webhooks/stripe/route.ts	named MagicLinkSend
+2026-08-30T06:28:00Z	facts	keep seedFacts as the static catalog that mirrors SQL	Comment Sicko wanted a rename; the dual read is the no-Supabase fallback, not leftover comment	lib/seed-facts.ts lib/facts.ts	catalog kept
